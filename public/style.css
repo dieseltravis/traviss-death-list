@@ -44,7 +44,27 @@ th {
   font-size:10px;
 }
 
-tbody tr:nth-child(odd) td {
+tr.loading {
+  
+}
+
+tr.loading td {
+  text-align: center;
+  vertical-align: middle;
+  height: 800px;
+  animation: infinite-spinning 6s linear infinite;
+}
+
+@keyframes infinite-spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+tbody tr:nth-child(even) td {
    background-color: #eee;
 }
 
