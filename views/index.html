@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>💀 Travis's Death Pool picks 💀</title>
+    <meta name="description" content="Travis's Death Pool: A cool thing made with Glitch that looks up a list od people's birth and death dates on wikipedia.">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        💀 Travis's Death Pool picks 💀
+      </h1>
+    </header>
+
+    <main>
+      <table id="folkTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Birth</th>
+            <th>Death</th>
+            <th>Age</th>
+            <th>Status</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <script id="rowTemplate" type="text/template">
+        <tr>
+          <td><a href="https://en.wikipedia.org/wiki/{{page}}" title="last updated {{updatedText}}">{{name}}</a></td>
+          <td>{{birthdayText}}</td>
+          <td>{{deathdayText}}</td>
+          <td>{{age}}</td>
+          <td><img src="{{img}}" alt="is {{name}} alive or dead?" width="32" height="32" title="{{statusText}}" /></td>
+          <td>{{actualPoints}}</td>
+        </tr>
+      </script>
+    </main>
+
+    <footer>
+      <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+      <p>
+        <a href="https://glitch.com">
+          Remix this in Glitch
+        </a>
+      </p>
+    </footer>
+
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <script src="/client.js"></script>
+
+  </body>
+</html>
