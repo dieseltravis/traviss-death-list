@@ -1,0 +1,167 @@
+/* styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::selection {
+    background: yellow;
+    text-shadow: none;
+}
+
+body {
+  /*font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;*/
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  margin: 1em;
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+  font-weight: bold;
+  color: #D00;
+  font-size: 1.5em;
+  margin: 0.5em auto;
+  text-align: center;
+}
+
+img,
+svg {
+    vertical-align: middle;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+th {
+  font-size:10px;
+}
+
+tbody tr:nth-child(odd) td {
+   background-color: #eee;
+}
+
+/* tbody tr:nth-last-child(-n+5) td */
+/* :nth-child(n+16) */
+tbody > tr > td {
+  padding: 0 5px;
+  margin: 0 0 2px 0;
+  opacity: 0.5;
+}
+
+tbody > tr > td:nth-child(1) {
+} 
+
+tbody > tr > td:nth-child(2) {
+  font-size:11px;
+  white-space: nowrap;
+}
+
+tbody > tr > td:nth-child(3) {
+  font-size:11px;
+  white-space: nowrap;
+}
+
+tbody > tr > td:nth-child(4) {
+  
+} 
+
+tbody > tr > td:nth-child(5) {
+  padding: 0;
+} 
+
+tbody > tr > td:nth-child(6) {
+  
+} 
+
+tbody > tr:nth-child(-n+20) > td {
+  opacity: 1.0;
+}
+
+footer {
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid lightgrey;
+  font-size: 0.5em;
+}
+
+footer > a {
+  color: #BBBBBB;
+}
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
