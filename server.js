@@ -7,33 +7,33 @@ var app = express();
 
 // this list of people's names, the wikipedia page id, and the page title
 var folks = [
-  //TODO: sort by age?
-  { name: "Mariah Carey", "pageid": 19499, page: "Mariah_Carey" },
-  { name: "Darryl Strawberry", "pageid": 189407, page: "Darryl_Strawberry" },
-  { name: "Mary-Kate Olsen", "pageid": 81800, page: "Mary-Kate_Olsen" },
-  { name: "Ashley Olsen", "pageid": 38314165, page: "Ashley_Olsen" },
-  { name: "Aaron Carter", "pageid": 83108, page: "Aaron_Carter" },
-  { name: "Ann-Margret", "pageid": 225502, page: "Ann-Margret" },
-  { name: "Tippi Hedren", "pageid": 287444, page: "Tippi_Hedren" },
-  { name: "King Kong Bundy", "pageid": 1087501, page: "King_Kong_Bundy" },
-  { name: "Michael J. Fox", "pageid": 61479, page: "Michael_J._Fox" },
-  { name: "Wilford Brimley", "pageid": 771114, page: "Wilford_Brimley" },
-  { name: "Aretha Franklin", "pageid": 147367, page: "Aretha_Franklin" },
-  { name: "Bobby Brown", "pageid": 148983, page: "Bobby_Brown" },
-  { name: "Gary Busey", "pageid": 13030, page: "Gary_Busey" },
-  { name: "John McCain", "pageid": 43715, page: "John_McCain" },
-  { name: "Johnny Depp", "pageid": 71870, page: "Johnny_Depp" },
-  { name: "Axl Rose", "pageid": 150056, page: "Axl_Rose" },
-  { name: "Iggy Pop", "pageid": 157437, page: "Iggy_Pop" },
-  { name: "Michael Caine", "pageid": 61479, page: "Michael_Caine" },
-  { name: "Brigitte Nielsen", "pageid": 995149, page: "Brigitte_Nielsen" },
-  { name: "Debbie Harry", "pageid": 15803791, page: "Debbie_Harry" },
-// Bench 
-  { name: "Ric Flair", "pageid": 332287, page: "Ric_Flair" },
-  { name: "Chevy Chase", "pageid": 102973, page: "Chevy_Chase" },
-  { name: "Boy George", "pageid": 24935995, page: "Boy_George" },
-  { name: "Keith Richards", "pageid": 157487, page: "Keith_Richards" },
-  { name: "Billy Idol", "pageid": 18678530, page: "Billy_Idol" },
+  // Starting line-up
+  { "name": "Tippi Hedren", "pageid": 287444, "page": "Tippi_Hedren" },
+  { "name": "Michael Caine", "pageid": 61479, "page": "Michael_Caine" },
+  { "name": "Wilford Brimley", "pageid": 771114, "page": "Wilford_Brimley" },
+  { "name": "John McCain", "pageid": 43715, "page": "John_McCain" },
+  { "name": "Ann-Margret", "pageid": 225502, "page": "Ann-Margret" },
+  { "name": "Aretha Franklin", "pageid": 147367, "page": "Aretha_Franklin" },
+  { "name": "Gary Busey", "pageid": 13030, "page": "Gary_Busey" },
+  { "name": "Debbie Harry", "pageid": 15803791, "page": "Debbie_Harry" },
+  { "name": "Iggy Pop", "pageid": 157437, "page": "Iggy_Pop" },
+  { "name": "King Kong Bundy", "pageid": 1087501, "page": "King_Kong_Bundy" },
+  { "name": "Michael J. Fox", "pageid": 68904, "page": "Michael_J._Fox" },
+  { "name": "Axl Rose", "pageid": 150056, "page": "Axl_Rose" },
+  { "name": "Darryl Strawberry", "pageid": 189407, "page": "Darryl_Strawberry" },
+  { "name": "Johnny Depp", "pageid": 71870, "page": "Johnny_Depp" },
+  { "name": "Brigitte Nielsen", "pageid": 995149, "page": "Brigitte_Nielsen" },
+  { "name": "Bobby Brown", "pageid": 148983, "page": "Bobby_Brown" },
+  { "name": "Mariah Carey", "pageid": 19499, "page": "Mariah_Carey" },
+  { "name": "Ashley Olsen", "pageid": 38314165, "page": "Ashley_Olsen" },
+  { "name": "Mary-Kate Olsen", "pageid": 81800, "page": "Mary-Kate_Olsen" },
+  { "name": "Aaron Carter", "pageid": 83108, "page": "Aaron_Carter" },
+  // Bench 
+  { "name": "Chevy Chase", "pageid": 102973, "page": "Chevy_Chase" },
+  { "name": "Keith Richards", "pageid": 157487, "page": "Keith_Richards" },
+  { "name": "Ric Flair", "pageid": 332287, "page": "Ric_Flair" },
+  { "name": "Billy Idol", "pageid": 18678530, "page": "Billy_Idol" },
+  { "name": "Boy George", "pageid": 24935995, "page": "Boy_George" },
 ];
 
 // http://expressjs.com/en/starter/static-files.html
@@ -116,11 +116,11 @@ var getWikiData = function (folks, expressResponse) {
           wikiData = {};
       
       for (var key in pages) {
-        console.log("pageid: " + key);
-        
         if (pages.hasOwnProperty(key)) {
+          console.log("pageid: " + key);
+        
               // get timestamp and content properties from wiki data
-          var timestamp = pages[key].revisions[0]["timestamp"],
+          var timestamp = pages[key].revisions[0].timestamp,
               content = pages[key].revisions[0]["*"],
               // match for birth and death date values
               match = content.match(MATCH_AGE),
