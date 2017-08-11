@@ -52,7 +52,7 @@ tr.loading td {
   text-align: center;
   vertical-align: middle;
   height: 800px;
-  animation: infinite-spinning 6s linear infinite;
+  animation: infinite-spinning 29s linear infinite;
 }
 
 @keyframes infinite-spinning {
