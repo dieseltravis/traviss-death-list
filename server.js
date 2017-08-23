@@ -7,6 +7,8 @@ var app = express();
 
 // this list of people's names, the wikipedia page id, and the page title
 // name is cosmetic, pageid & page are for looking up & linking to wikipedia
+// get the pageId from here: https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=Martin%20Landau
+// (just change the titles parameter at the end to the title of the page)
 // Starting line-up is first 20, Bench is last 5
 var folks = require(__dirname + "/folks.json");
 
