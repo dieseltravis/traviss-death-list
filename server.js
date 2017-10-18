@@ -30,7 +30,7 @@ const WIKI_QUERY = "https://en.wikipedia.org/w/api.php?action=query&format=json&
 const Q = /\{\{q\}\}/;
 
 // regex matches birth date and a death date if it exists from the wiki markup
-const MATCH_AGE = /age(\|[dm]f=ye?s?)?(\|(\d+)\|(\d+)\|(\d+))?\|(\d+)\|(\d+)\|(\d+)(\|[dm]f=ye?s?)?\|?\}/i;
+const MATCH_AGE = /age\s*(\|[dm]f=ye?s?)?(\|(\d+)\|(\d+)\|(\d+))?\|(\d+)\|(\d+)\|(\d+)(\|[dm]f=ye?s?)?\|?\}/i;
 // this enum represents the group locations for each of the values in the above regex
 const MATCH_KEYS = {
   BIRTH: {
